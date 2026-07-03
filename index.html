@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Ticket Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="font-awesome" href="fonts/Inconsolata-VariableFont_wdth,wght.ttf">
+</head>
+
+<body>
+        <div class="line-top">
+            <img src="images/pattern-squiggly-line-top.svg" alt="">
+        </div>
+             
+        <div class="line-bottom">
+            <img src="images/pattern-squiggly-line-bottom-desktop.svg" alt="">
+        </div>
+        <div class="line-bottom-tablet">
+            <img src="images/pattern-squiggly-line-bottom-mobile-tablet.svg" alt="">
+        </div>
+        <div class="pattern-lines">
+            <img src="images/pattern-lines.svg" alt="">
+        </div>
+        <div class="pattern-circle">
+            <img src="images/pattern-circle.svg" alt="">
+        </div>
+
+    <div class="container" id="container">
+        <div class="logo">
+            <img src="images/logo-full.svg" alt="">
+        </div>
+        
+        <div class="header">
+            <h1> Your Journey to Coding Conf 2025 Starts Here!</h1>
+            <p>Secure your spot at next year's biggest cosing conference</p>
+
+        </div>
+
+        <form id="myForm" name="myForm">
+            <div class="upload-container">
+                <label for="file" style="margin-bottom:10px;">Upload Avatar</label>
+                <div class="upload-section" id="dropzone-wrapper">
+                    <input type="file" name="file" id="file" accept=".jpg,.png" style="display: none;">
+
+                    <label for="file" class="upload-state-empty">
+                        <div class="upload-icon-box">
+                            <img src="images/icon-upload.svg" alt="">
+                        </div>
+
+                        <span class="upload-text">Drag and drop or click to upload</span>
+                    </label>
+
+                    <div class="upload-state-preview">
+                         <img src="" alt="uploadImg-preview" id="uploadImg-preview">
+                         <div class="preview-actions">
+                            <button type="button" id="btn-remove">Remove image</button>
+                            <label for="file" id="btn-change">Change Image</label>
+                         </div>
+                    </div>
+                </div>
+                <div class="upload-message" id="upload-message">
+                    <img src="images/icon-info.svg" alt="" class="icon-info">
+                    <p>upload your photo (JPG or PNG, max size: 500kb)</p>
+                </div>
+            </div>
+
+            <!-- FullName -->
+           <div class="fname">
+                <label for="fName">Full Name</label>
+                <input type="text" name="fname" id="fname">
+           </div>
+
+           <!-- Email Address -->
+           <div class="Email-section">
+                <label for="Email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="example@email.com">
+                <div id="emailMessage">
+
+                </div>
+            </div>
+
+           <!-- Github Username -->
+           <div class="gitUserName">
+                <label for="gitUserName">Github Username</label>
+                <input type="text" name="gitUserName" id="gitUserName" placeholder="@yourusername">
+           </div>
+
+           <!-- Generate Ticket Button -->
+           <button id="generateBtn" type="button">Generate My Ticket</button>
+        </form>
+    </div>
+
+
+    <div class="popup" id="popup">
+        <h1>Welcome to Conference Ticket Generator</h1>
+        <p>Here you can generate your Conference Ticket</p>
+        <p>Click on the Generate Button to generate your ticket after filling the form </p>
+        <p>we are glad you find your way here!🥳</p>
+
+        <button id="announceBtn" type="button">Close Announcement</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

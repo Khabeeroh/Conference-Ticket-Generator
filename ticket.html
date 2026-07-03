@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Ticket </title>
+   <link rel="stylesheet" href="index.css">
+    <link rel="font-awesome" href="fonts/Inconsolata-VariableFont_wdth,wght.ttf">
+</head>
+<body class="ticket-body">
+        <div class="line-top">
+            <img src="images/pattern-squiggly-line-top.svg" alt="">
+        </div>  
+        <div class="ticket-line-bottom">
+            <img src="images/pattern-squiggly-line-bottom-desktop.svg" alt="">
+        </div>
+        <div class="ticket-line-bottom-tablet">
+            <img src="images/pattern-squiggly-line-bottom-mobile-tablet.svg" alt="">
+        </div>
+        <div class="pattern-lines">
+            <img src="images/pattern-lines.svg" alt="">
+        </div>
+        <div class="pattern-circle">
+            <img src="images/pattern-circle.svg" alt="">
+        </div>
+        
+    <div class="container" id="container">
+        <div class="logo">
+            <img src="images/logo-full.svg" alt="">
+        </div>
+    <div id="ticketResult"></div>
+
+    <script>
+        const result = document.getElementById('ticketResult')
+        const ticketMarkup = sessionStorage.getItem('ticketMarkup')
+
+        if (ticketMarkup) {
+            result.innerHTML = ticketMarkup
+        } else {
+            result.innerHTML = '<p>No ticket found. Please generate one first.</p>'
+        }
+    </script>
+</body>
+</html>
