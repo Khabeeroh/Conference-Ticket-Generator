@@ -431,4 +431,9 @@ input:active{
     font-size: 15px;
 }
 
+.popup{
+    width: 90%;
+    height: auto;
+}
+
 }
