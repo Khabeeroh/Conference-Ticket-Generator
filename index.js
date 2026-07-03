@@ -15,7 +15,7 @@ fileInput.addEventListener("change", (e) => {
 
     if (!file) return;
 
-    const allowedTypes = ["image/png", "image/jpeg"];
+    const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
 
     if (!allowedTypes.includes(file.type)) {
         return;
