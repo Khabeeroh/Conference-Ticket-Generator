@@ -15,12 +15,13 @@ fileInput.addEventListener("change", (e) => {
 
     if (!file) return;
 
-    const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
+  const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
+    const allowedExtensions = [".jpg", ".png"];
+    const fileName = file.name.toLowerCase();
 
-    if (!allowedTypes.includes(file.type)) {
+    if (!allowedTypes.includes(file.type) || !allowedExtensions.some(ext => fileName.endsWith(ext))) {
         return;
     }
-
     if (file.size > 500 * 1024) {
         uploadMessage.innerHTML = `<img src="images/icon-info.svg" alt="" class="icon-info">
                     <p>Image must have max size 500kb)</p>`
@@ -118,7 +119,7 @@ generateBtn.addEventListener('click', function () {
     
 
 
-// localStorage.clear()
+localStorage.clear()
 window.addEventListener('load', () => {
     const hasSeenPopup = localStorage.getItem('popupShown') === 'true'
 
