@@ -435,8 +435,9 @@ input:active{
 .popup{
     width: 90%;
     height: auto;
-    top: 0%;
-    left: 50%;
+    top: 20%;
+    left: 5%;
+    line-height: normal;
 }
 
 }
