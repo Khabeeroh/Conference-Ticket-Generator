@@ -22,6 +22,8 @@ fileInput.addEventListener("change", (e) => {
     }
 
     if (file.size > 500 * 1024) {
+        uploadMessage.innerHTML = `<img src="images/icon-info.svg" alt="" class="icon-info">
+                    <p>upload your photo must have max size 500kb)</p>`
         return;
     }
 
