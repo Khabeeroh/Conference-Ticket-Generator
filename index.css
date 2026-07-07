@@ -12,7 +12,7 @@
     font-family: "Inconsolata", monospace;
 }
 
-body, #ticket-body{
+body{
     margin: 40px auto;
     background: url(images/background-desktop.png);
     background-position: center;
