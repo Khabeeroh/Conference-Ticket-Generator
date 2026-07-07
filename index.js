@@ -23,8 +23,9 @@ fileInput.addEventListener("change", (e) => {
         return;
     }
     if (file.size > 500 * 1024) {
-        uploadMessage.innerHTML = `<img src="images/icon-info.svg" alt="" class="icon-info">
-                    <p>Image must have max size 500kb)</p>`
+        uploadMessage.innerHTML = 
+        `<img src="images/icon-info.svg" alt="" class="icon-info">
+        <p>Image must have max size 500kb)</p>`
         return;
     }
 
@@ -86,7 +87,7 @@ generateBtn.addEventListener('click', function () {
         const ticketMarkup = `
         <div class="ticket-container">
            <div class="ticket-heading">
-                 <h1>Congrats, <span class="ticket-fname" style="color: hsl(7, 88%, 67%);">${fullName}</span>! Your ticket is ready.</h1>
+                 <h1>Congrats, <span class="ticket-fname">${fullName}</span>! Your ticket is ready.</h1>
                 <p>We've emailed your ticket to <span class="ticket-email" style="color: hsl(7, 88%, 67%);">${email}</span> and will send updates in the run up to the event.</p>
            </div>
             <div class="ticket">
@@ -111,13 +112,13 @@ generateBtn.addEventListener('click', function () {
                     <p>#01609</p>
                 </div>
             </div>
+
+            
         </div>
     `
     sessionStorage.setItem('ticketMarkup', ticketMarkup)
     window.location.href = 'ticket.html'
 })
-    
-
 
 localStorage.clear()
 window.addEventListener('load', () => {

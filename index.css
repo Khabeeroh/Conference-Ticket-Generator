@@ -12,7 +12,7 @@
     font-family: "Inconsolata", monospace;
 }
 
-body{
+body, #ticket-body{
     margin: 40px auto;
     background: url(images/background-desktop.png);
     background-position: center;
@@ -62,7 +62,9 @@ body{
     opacity:0.8;
 }
 .container{
-    margin-bottom: 10%;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 .line-bottom img, .ticket-line-bottom img{
     width: 45em;
@@ -238,6 +240,20 @@ input:active{
     border-radius: 10px;
     margin-top: 10px;
 }
+
+#downloadBtn{
+    background-color: hsl(7, 88%, 67%);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    transition: all 0.4s;
+    cursor: pointer;
+    border: none;
+    display: block;
+    text-align: center;
+    margin: 0px auto;
+    position: relative;
+}
 .popup{
     text-align: center;
     position: fixed;
@@ -275,14 +291,6 @@ input:active{
     font-size: 25px;
     color:  hsl(0, 0%, 100%);
 }
-.ticket-heading p{
-    margin-left: 40px;
-    width: 80%;
-    padding: 10px;
-    font-size: 12px;
-    font-weight: 400;
-}
-
 .ticket-fname {
       background: linear-gradient(to right,hsl(7, 86%, 67%), hsl(0, 0%, 100%)) !important;
     -webkit-background-clip: text !important;
@@ -291,6 +299,14 @@ input:active{
     color: transparent !important;
     
 }
+.ticket-heading p{
+    margin-left: 40px;
+    width: 80%;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
 .ticket{
     background: url(images/pattern-ticket.svg);
     width: 100%;
@@ -333,7 +349,9 @@ input:active{
 }
 .right{
     writing-mode: vertical-lr;
-    transform: rotate(180%);
+    text-orientation: mixed;
+    /* transform-origin: center; */
+    /* transform: rotate(180%); */
     color: hsl(245, 15%, 58%);
     
 }
@@ -342,7 +360,6 @@ input:active{
     gap: 10px;
     align-items: center;
 } 
- 
 
 @media screen and (max-width: 700px) {
     body{

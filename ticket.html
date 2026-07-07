@@ -7,7 +7,7 @@
    <link rel="stylesheet" href="index.css">
     <link rel="font-awesome" href="fonts/Inconsolata-VariableFont_wdth,wght.ttf">
 </head>
-<body class="ticket-body">
+<body class="ticket-body" id="ticket-body">
         <div class="line-top">
             <img src="images/pattern-squiggly-line-top.svg" alt="">
         </div>  
@@ -25,11 +25,14 @@
         </div>
         
     <div class="container" id="container">
-        <div class="logo">
-            <img src="images/logo-full.svg" alt="">
-        </div>
-    <div id="ticketResult"></div>
+            <div class="logo">
+                <img src="images/logo-full.svg" alt="">
+            </div>
+        <div id="ticketResult"></div>
+    </div>
+    <button id="downloadBtn">Download Ticket</button>
 
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.min.js"></script>
     <script>
         const result = document.getElementById('ticketResult')
         const ticketMarkup = sessionStorage.getItem('ticketMarkup')
@@ -39,6 +42,28 @@
         } else {
             result.innerHTML = '<p>No ticket found. Please generate one first.</p>'
         }
+
+        const downloadBtn = document.getElementById('downloadBtn')
+        downloadBtn.addEventListener("click", async () => {
+            const container = document.getElementById("container");
+            await document.fonts.ready;
+
+            htmlToImage.toPng(container, {
+            pixelRatio: 4,
+            cacheBust: true,
+           style: {
+                backgroundImage: 'url("images/background-desktop.png")',
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center"
+            }
+        }).then((dataUrl) => {
+            const link = document.createElement("a");
+            link.download = "ticket.png";
+            link.href = dataUrl;
+            link.click();
+        });
+});
     </script>
 </body>
 </html>
