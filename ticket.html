@@ -51,12 +51,7 @@
             htmlToImage.toPng(container, {
             pixelRatio: 4,
             cacheBust: true,
-           style: {
-                backgroundImage: 'url("images/background-desktop.png")',
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center"
-            }
+            backgroundColor: "#0d0221"
         }).then((dataUrl) => {
             const link = document.createElement("a");
             link.download = "ticket.png";
